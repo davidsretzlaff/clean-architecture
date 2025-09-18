@@ -1,9 +1,14 @@
-﻿namespace Hostly.Domain.Apartments;
+﻿using Hostly.Domain.Abstractions;
+
+namespace Hostly.Domain.Apartments;
 
 
-public sealed class Apartment 
+public sealed class Apartment : Entity
 {
-    public Guid Id { get; private set; }
+    public Apartment(Guid id) : base(id)
+    {
+    }
+
     public string Name { get; private set; }
 
     public string Description { get; private set; }
