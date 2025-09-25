@@ -1,4 +1,6 @@
 ﻿using Hostly.Domain.Abstractions;
+using Hostly.Domain.Apartments;
+using Hostly.Domain.Shared;
 
 namespace Hostly.Domain.Apartments;
 

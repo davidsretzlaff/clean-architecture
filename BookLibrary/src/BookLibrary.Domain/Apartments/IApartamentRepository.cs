@@ -1,4 +1,4 @@
-﻿namespace Hostly.Domain;
+﻿namespace Hostly.Domain.Apartments;
 
 public interface IApartamentRepository
 {
