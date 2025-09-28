@@ -1,4 +1,5 @@
-﻿using Hostly.Application.Abstractions.Behaviors;
+﻿using FluentValidation;
+using Hostly.Application.Abstractions.Behaviors;
 using Hostly.Domain.Bookings;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,8 +15,12 @@ namespace Hostly.Application
                 configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
 
                 configuration.AddBehavior(typeof(LoggingBehavior<,>));
+
+                configuration.AddBehavior(typeof(ValidationBehavior<,>));
             });
 
+            services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
+            
             services.AddTransient<PricingService>();
 
             return services;
