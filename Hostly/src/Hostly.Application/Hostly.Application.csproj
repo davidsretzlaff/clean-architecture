@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Hostly.Domain\Hostly.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\Messaging\" />
+  </ItemGroup>
+
 </Project>
