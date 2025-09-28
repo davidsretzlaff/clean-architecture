@@ -1,4 +1,4 @@
-﻿using Hostly.Domain.Hostly.Domain.Abstractions;
+﻿using Hostly.Domain.Abstractions;
 using MediatR;
 
 namespace Hostly.Application.Abstractions.Messaging;
