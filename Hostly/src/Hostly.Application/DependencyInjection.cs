@@ -1,4 +1,5 @@
-﻿using Hostly.Domain.Bookings;
+﻿using Hostly.Application.Abstractions.Behaviors;
+using Hostly.Domain.Bookings;
 using Microsoft.Extensions.DependencyInjection;
 
 
@@ -11,6 +12,8 @@ namespace Hostly.Application
             services.AddMediatR(configuration =>
             {
                 configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+
+                configuration.AddBehavior(typeof(LoggingBehavior<,>));
             });
 
             services.AddTransient<PricingService>();

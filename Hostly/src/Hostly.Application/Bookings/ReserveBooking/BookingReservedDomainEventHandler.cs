@@ -39,8 +39,6 @@ internal sealed class BookingReservedDomainEventHandler : INotificationHandler<B
         await _emailService.SendAsync(
             user.Email, 
             "Booking Reserved", 
-            "You have 10 minutes to confirm your booking");
-
-        
+            "You have 10 minutes to confirm your booking");        
     }
 }
