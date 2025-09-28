@@ -1,3 +1,3 @@
-﻿namespace Hostly.Domain.Hostly.Domain.Apartments;
+﻿namespace Hostly.Domain.Apartments;
 
 public record class Description(string Value);

@@ -1,6 +1,6 @@
-﻿using Hostly.Domain.Hostly.Domain.Abstractions;
+﻿using Hostly.Domain.Abstractions;
 
-namespace Hostly.Domain.Hostly.Domain.Bookings;
+namespace Hostly.Domain.Bookings;
 
 public static class BookingErrors
 {

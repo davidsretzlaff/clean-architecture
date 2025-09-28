@@ -1,4 +1,4 @@
-namespace Hostly.Domain.Hostly.Domain.Bookings;
+namespace Hostly.Domain.Bookings;
 
 public enum BookingStatus
 {

@@ -1,4 +1,4 @@
-﻿namespace Hostly.Domain.Hostly.Domain.Abstractions;
+﻿namespace Hostly.Domain.Abstractions;
 
 public record class Error(string Code, string Name)
 {

@@ -1,7 +1,7 @@
-﻿using Hostly.Domain.Hostly.Domain.Abstractions;
-using Hostly.Domain.Hostly.Domain.Users.Events;
+﻿using Hostly.Domain.Abstractions;
+using Hostly.Domain.Users.Events;
 
-namespace Hostly.Domain.Hostly.Domain.Users;
+namespace Hostly.Domain.Users;
 
 public sealed class User : Entity  
 {

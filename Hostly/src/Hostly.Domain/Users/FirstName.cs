@@ -1,3 +1,3 @@
-﻿namespace Hostly.Domain.Hostly.Domain.Users;
+﻿namespace Hostly.Domain.Users;
 
 public record class FirstName(string Value);

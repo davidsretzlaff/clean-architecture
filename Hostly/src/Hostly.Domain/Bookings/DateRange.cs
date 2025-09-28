@@ -1,10 +1,9 @@
-namespace Hostly.Domain.Hostly.Domain.Bookings;
+namespace Hostly.Domain.Bookings;
 
 public record DateRange
 {
     private DateRange()
     {
-        
     }
 
     public DateOnly Start { get; init; }

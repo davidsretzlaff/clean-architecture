@@ -1,4 +1,4 @@
-﻿namespace Hostly.Domain.Hostly.Domain.Shared;
+﻿namespace Hostly.Domain.Shared;
 
 public record class Currency
 {

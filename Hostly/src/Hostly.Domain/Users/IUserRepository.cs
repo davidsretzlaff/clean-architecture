@@ -1,4 +1,4 @@
-﻿namespace Hostly.Domain.Hostly.Domain.Users;
+﻿namespace Hostly.Domain.Users;
 
 public interface IUserRepository
 {

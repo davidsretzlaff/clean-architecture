@@ -1,7 +1,7 @@
-﻿using Hostly.Domain.Hostly.Domain.Abstractions;
-using Hostly.Domain.Hostly.Domain.Shared;
+﻿using Hostly.Domain.Abstractions;
+using Hostly.Domain.Shared;
 
-namespace Hostly.Domain.Hostly.Domain.Apartments;
+namespace Hostly.Domain.Apartments;
 
 
 public sealed class Apartment : Entity

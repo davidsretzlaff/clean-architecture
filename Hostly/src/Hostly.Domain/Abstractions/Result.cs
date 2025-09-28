@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Hostly.Domain.Hostly.Domain.Abstractions;
+namespace Hostly.Domain.Abstractions;
 
 public class Result
 {

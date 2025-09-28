@@ -1,4 +1,4 @@
-namespace Hostly.Domain.Hostly.Domain.Apartments;
+namespace Hostly.Domain.Apartments;
 
 public enum Amenity
 {
