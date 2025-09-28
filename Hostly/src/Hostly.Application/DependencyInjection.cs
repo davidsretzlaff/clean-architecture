@@ -1,4 +1,4 @@
-﻿using Hostly.Domain.Hostly.Domain.Bookings;
+﻿using Hostly.Domain.Bookings;
 using Microsoft.Extensions.DependencyInjection;
 
 
