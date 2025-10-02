@@ -1,4 +1,5 @@
-﻿using Hostly.Domain.Abstractions;
+﻿using Hostly.Application.Exceptions;
+using Hostly.Domain.Abstractions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,11 +22,16 @@ public class ApplicationDbContext : DbContext, IUnitOfWork
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        var result = await base.SaveChangesAsync(cancellationToken);
-
-        await PublishDomainEventsAsync();
-
-        return result;
+        try 
+        {
+            var result = await base.SaveChangesAsync(cancellationToken);
+            await PublishDomainEventsAsync();
+            return result;
+        }
+        catch (DbUpdateConcurrencyException ex)
+        {
+            throw new ConcurrencyException(ex.Message, ex);
+        }
     }
 
     private async Task PublishDomainEventsAsync()
