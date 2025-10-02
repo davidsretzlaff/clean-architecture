@@ -1,5 +1,6 @@
 ﻿using Hostly.Application.Abstractions.Clock;
 using Hostly.Application.Abstractions.Messaging;
+using Hostly.Application.Exceptions;
 using Hostly.Domain.Abstractions;
 using Hostly.Domain.Apartments;
 using Hostly.Domain.Bookings;
@@ -10,7 +11,7 @@ namespace Hostly.Application.Bookings.ReserveBooking;
 internal sealed class ReserveBookingCommandHandler : ICommandHandler<ReserveBookingCommand, Guid>
 {
     private readonly IBookingRepository _bookingRepository;
-    private readonly IApartamentRepository _apartmentRepository;
+    private readonly IApartmentRepository _apartmentRepository;
     private readonly IUserRepository _userRepository;
     private readonly IUnitOfWork _unitOfWork;   
     private readonly PricingService _pricingService;
@@ -18,7 +19,7 @@ internal sealed class ReserveBookingCommandHandler : ICommandHandler<ReserveBook
  
     public ReserveBookingCommandHandler(
         IBookingRepository bookingRepository,
-        IApartamentRepository apartmentRepository,
+        IApartmentRepository apartmentRepository,
         IUserRepository userRepository,
         IUnitOfWork unitOfWork,
         PricingService pricingService,
@@ -51,11 +52,18 @@ internal sealed class ReserveBookingCommandHandler : ICommandHandler<ReserveBook
         {
             return Result.Failure<Guid>(BookingErrors.Overlap);
         }
-
-        var booking = Booking.Reserve(apartment, user.Id, duration, _dateTimeProvider.UtcNow, _pricingService);
         
-        _bookingRepository.Add(booking);
-        await _unitOfWork.SaveChangesAsync(cancellationToken);
-        return booking.Id;
+        try 
+        {
+             var booking = Booking.Reserve(apartment, user.Id, duration, _dateTimeProvider.UtcNow, _pricingService);        
+            _bookingRepository.Add(booking);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
+            return booking.Id;
+        }
+        catch (ConcurrencyException ex)
+        {
+            return Result.Failure<Guid>(BookingErrors.Overlap);
+        }
+      
     }
 }
