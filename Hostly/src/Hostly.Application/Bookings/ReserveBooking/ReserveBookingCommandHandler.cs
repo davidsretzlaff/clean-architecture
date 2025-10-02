@@ -10,7 +10,7 @@ namespace Hostly.Application.Bookings.ReserveBooking;
 internal sealed class ReserveBookingCommandHandler : ICommandHandler<ReserveBookingCommand, Guid>
 {
     private readonly IBookingRepository _bookingRepository;
-    private readonly IApartamentRepository _apartmentRepository;
+    private readonly IApartmentRepository _apartmentRepository;
     private readonly IUserRepository _userRepository;
     private readonly IUnitOfWork _unitOfWork;   
     private readonly PricingService _pricingService;
@@ -18,7 +18,7 @@ internal sealed class ReserveBookingCommandHandler : ICommandHandler<ReserveBook
  
     public ReserveBookingCommandHandler(
         IBookingRepository bookingRepository,
-        IApartamentRepository apartmentRepository,
+        IApartmentRepository apartmentRepository,
         IUserRepository userRepository,
         IUnitOfWork unitOfWork,
         PricingService pricingService,

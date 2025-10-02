@@ -1,7 +1,13 @@
 ﻿using Hostly.Application.Abstractions.Clock;
 using Hostly.Application.Abstractions.Email;
+using Hostly.Domain.Abstractions;
+using Hostly.Domain.Apartments;
+using Hostly.Domain.Bookings;
+using Hostly.Domain.Reviews;
+using Hostly.Domain.Users;
 using Hostly.Infrastructure.Clock;
 using Hostly.Infrastructure.Email;
+using Hostly.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +30,13 @@ public static class DependencyInjection
         {
             options.UseNpgsql(connectionString).UseSnakeCaseNamingConvention();
         });
+
+        services.AddScoped<IUnitOfWork, ApplicationDbContext>( sp => sp.GetRequiredService<ApplicationDbContext>());
+        
+        services.AddScoped<IApartmentRepository, ApartmentRepository>();
+        services.AddScoped<IBookingRepository, BookingRepository>();
+        services.AddScoped<IReviewRepository, ReviewRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
 
         return services;
     }
