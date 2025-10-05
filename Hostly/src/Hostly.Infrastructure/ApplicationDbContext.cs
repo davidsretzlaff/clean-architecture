@@ -7,11 +7,11 @@ namespace Hostly.Infrastructure;
 
 public class ApplicationDbContext : DbContext, IUnitOfWork
 {
-    public readonly IPublisher _publisher;
+    private readonly IPublisher _publisher;
 
-    public ApplicationDbContext(DbContextOptions options) : base(options)
+    public ApplicationDbContext(DbContextOptions options, IPublisher publisher) : base(options)
     {
-
+        _publisher = publisher;
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

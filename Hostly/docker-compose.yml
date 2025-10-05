@@ -1,0 +1,23 @@
+services:
+  hostly.api:
+    image: ${DOCKER_REGISTRY-}hostlyapi
+    build:
+      context: .
+      dockerfile: src/Hostly.API/Dockerfile
+    depends_on:
+      - hostly-db
+
+  hostly-db:
+    image: postgres:latest
+    container_name: Hostly.Db
+    environment:
+      - POSTGRES_DB=hostly
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - hostly_postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+volumes:
+  hostly_postgres_data:

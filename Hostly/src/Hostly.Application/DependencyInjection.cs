@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using Hostly.Application.Abstractions.Behaviors;
 using Hostly.Domain.Bookings;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 
@@ -13,11 +14,10 @@ namespace Hostly.Application
             services.AddMediatR(configuration =>
             {
                 configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
-
-                configuration.AddBehavior(typeof(LoggingBehavior<,>));
-
-                configuration.AddBehavior(typeof(ValidationBehavior<,>));
             });
+
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
             

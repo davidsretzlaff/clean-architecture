@@ -1,5 +1,4 @@
-﻿using Bookify.Api.Controllers.Bookings;
-using Hostly.Application.Bookings.GetBooking;
+﻿using Hostly.Application.Bookings.GetBooking;
 using Hostly.Application.Bookings.ReserveBooking;
 using Hostly.Domain.Abstractions;
 using MediatR;
