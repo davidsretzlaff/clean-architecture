@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostly.Application", "src\H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostly.Infrastructure", "src\Hostly.Infrastructure\Hostly.Infrastructure.csproj", "{0960DE60-C3DE-4A19-97BE-CB099D9E0273}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostly.API", "src\Hostly.API\Hostly.API.csproj", "{7E960D8A-2064-4479-8916-A38306B4913D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{0960DE60-C3DE-4A19-97BE-CB099D9E0273}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0960DE60-C3DE-4A19-97BE-CB099D9E0273}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0960DE60-C3DE-4A19-97BE-CB099D9E0273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E960D8A-2064-4479-8916-A38306B4913D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E960D8A-2064-4479-8916-A38306B4913D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E960D8A-2064-4479-8916-A38306B4913D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E960D8A-2064-4479-8916-A38306B4913D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{F75F67F6-9C8A-7AC5-C165-E0D684F49E86} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{8BC51049-C2A4-4AD6-B6F1-8D8AED8C1398} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{0960DE60-C3DE-4A19-97BE-CB099D9E0273} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{7E960D8A-2064-4479-8916-A38306B4913D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CC4C6E4A-29F0-4702-84C0-F16AE3523ECB}
