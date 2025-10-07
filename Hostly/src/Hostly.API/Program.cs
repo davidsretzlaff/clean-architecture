@@ -1,3 +1,4 @@
+using Hostly.Api.Extensions;
 using Hostly.Application;
 using Hostly.Infrastructure;
 
@@ -17,6 +18,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.ApplyMigrations();
 }
 
 app.UseHttpsRedirection();
